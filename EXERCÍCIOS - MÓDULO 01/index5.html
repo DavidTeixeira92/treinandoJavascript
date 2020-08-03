@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercício JS - Módulo 01</title>
+    </head>
+    <body>
+        <h1>5º EXERCÍCIO</h1>
+        <p>Dado o seguinte vetor de objetos:</p>
+        <script>
+            function habilidadeUsuario(usuarios){
+                
+                for (let usuario of usuarios){
+
+                    console.log('O ' + usuario.nome + ' possui as habilidades: ' +usuario.habilidades.join(", ") + '.');
+                }
+
+            }
+
+            var usuarios = [
+                {
+
+                    nome: "David",
+                    habilidades: ["Javascript", "Design Gráfico", "Teaching"]
+
+                },
+                {
+
+                    nome: "Diego",
+                    habilidades: ["Python", "Java", "Javascript", "Django", "ReactJS", "Ruby on Rails"]
+
+                }
+                
+
+            ];            
+
+
+            habilidadeUsuario(usuarios);
+
+        </script>
+    </body>
+</html>

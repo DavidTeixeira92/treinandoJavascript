@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercício JS - Módulo 01</title>
+    </head>
+    <body>
+        <h1>1º EXERCÍCIO</h1>
+        <p>Crie uma função que dado o objeto a seguir: </p>
+        <script>
+            function enderecoUsuario(rua, numero, bairro, cidade, uf){
+                var mostrarEndereco = "O usuário mora em " +  cidade + " / " + uf + ", " 
+                + "no bairro " + bairro + ", " + "na rua " + rua + " com nº " + numero + ".";
+                return mostrarEndereco;
+            }
+            var endereco ={
+                rua: "Rua César Correia",
+                numero: 1305,
+                bairro: "Floresta",
+                cidade: "Fortaleza",
+                uf: "CE"
+            };
+            var mostrarEndereco = enderecoUsuario(endereco.rua, endereco.numero, 
+                                endereco.bairro, endereco.cidade, endereco.uf);
+            console.log(mostrarEndereco);
+        </script>
+    </body>
+</html>

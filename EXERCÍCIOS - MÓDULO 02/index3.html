@@ -1,0 +1,63 @@
+<html>
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title>Exercício - Módulo 02</title>
+
+    </head>
+
+    <body>
+
+        <h1>3º exercício</h1>
+
+        <p>
+            A partir do seguinte vetor:
+        </p>
+
+        <div id="app">
+
+        </div>
+
+       
+
+        <script>
+            var listaNomes = ["David", "Diego", "Jubileu", "Chewbacca"];
+
+            var listaElement = document.createElement('ul'); //cria a tag ul
+            //var listaElement = document.querySelector('ul'); //pegando a tag ul
+            for(var nome of listaNomes){
+
+                var itemElement = document.createElement('li'); //criou a tag li
+
+                //aqui eu adiciono no li todos os textos obtidos de cada posição do vetor listaNomes
+                itemElement.appendChild(document.createTextNode(nome)); 
+
+                
+    
+                //aqui eu adiciono o itemElement no listaElement
+                listaElement.appendChild(itemElement);
+
+
+                //Vou estilizar o li aqui
+                itemElement.style.display = 'inline';
+                itemElement.style.listStyle = 'none';
+                itemElement.style.padding = 5;
+                itemElement.style.backgroundColor = 'pink';
+                itemElement.style.borderRadius = 100;
+            }
+            
+
+          
+
+            var boxElement = document.querySelector('#app'); //localizo a tag div id = "app"
+            boxElement.appendChild(listaElement); //aqui eu adiciono uma tag ul na div id="app"
+              
+
+
+        </script>
+
+    </body>
+
+</html>

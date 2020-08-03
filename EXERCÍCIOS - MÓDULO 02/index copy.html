@@ -1,0 +1,65 @@
+<html>
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title>Exercício - Módulo 02</title>
+
+    </head>
+
+    <body>
+
+        <h1>1º exercício</h1>
+
+        <p>
+            Crie um botão que ao ser clicado cria um novo elemento em tela com a forma de um quadrado
+            vermelho com 100px de altura e largura. Sempre que o botão for clicado um novo quadrado deve
+            aparecer na tela.
+        </p>
+
+        <div id = "app">
+
+            <button id = "botao">Criar quadrado vermelho</button>
+
+        </div>
+        <br>
+        <div id = "quadrado"> 
+                  
+        </div>
+        
+        <script>
+            //localizar a tag button pelo ID
+            var btnElement = document.getElementById('botao');
+            //localizar a tag div pelo ID
+            var quadradoElement = document.getElementById('quadrado');
+            //quando o botão é pressionado uma função é realizada
+            btnElement.onclick = function(){
+
+                var pularLinha = document.createElement('br'); //criei aqui a tag br
+                var quadrado = document.createElement('div'); //criei aqui a tag div
+
+                //Nas próximas 03 linhas, defini as propriedades do CSS de altura, largura e cor de fundo.
+                quadrado.style.width = 100; 
+                quadrado.style.height = 100;
+                quadrado.style.backgroundColor = 'red';
+
+                //Disse aqui que o quadrado é parte do quadradoElement,
+                //ou seja, uma div com a estilização CSS é adicionada dentro da div id="quadrado"
+                quadradoElement.appendChild(quadrado); 
+
+                //Disse aqui que o pularLinha é parte do quadradoElement,
+                //basicamente serão realizadas quebras de linhas após cada quadrado adicionado
+                quadradoElement.appendChild(pularLinha); //caso não queira que pule linha, retire este trecho
+
+                function mostrarMensagem(){
+                    alert('Seu quadrado vermelho foi criado!')
+                }
+                setTimeout(mostrarMensagem, 1000); //após 1s, a mensagem "Seu quadrado vermelho foi criado!" é apresentada na tela.
+            } 
+            
+        </script>
+
+    </body>
+
+</html>

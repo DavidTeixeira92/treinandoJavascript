@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercício JS - Módulo 01</title>
+    </head>
+    <body>
+        <h1>4º EXERCÍCIO</h1>
+        <p>Escreva uma função que dado um total de anos de estudo retorna o quão experiente o usuário é:</p>
+        <script>
+
+            function experiencia(anos){
+                switch (anos) {
+                    case 1:
+                        console.log("Você é iniciante, continue se esforçando!");
+                        break;
+                    case 2:
+                        console.log("Você é intermediário, continue se esforçando para evoluir ainda mais!");
+                        break;
+                    case 3:
+                        console.log("Você é intermediário, continue se esforçando para evoluir ainda mais!");
+                        break;
+                    case 4:
+                        console.log("Você é avançado, você é o cara, mas pode ir mais além, continue se dedicando");
+                        break;
+
+                    case 5:
+                        console.log("Você é avançado, você é o cara, mas pode ir mais além, continue se dedicando");
+                        break;
+
+                    case 6:
+                        console.log("Você é avançado, você é o cara, mas pode ir mais além, continue se dedicando");
+                        break;
+                
+                    default:
+                        console.log("Você é o mestre Yoda da programação, um mestre Jedi de tanto conhecimento!");
+                        break;
+                }
+
+            }
+
+            var anosEstudo = 2;
+            experiencia(anosEstudo);
+
+            /**
+                de 0-1 ano é iniciante
+                de 1-3 anos é intermediário
+                de 3-6 anos é avançado
+                de 7 em diante é Mestre Jedi
+            **/
+
+        </script>
+    </body>
+</html>

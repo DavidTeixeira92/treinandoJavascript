@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercício JS - Módulo 01</title>
+    </head>
+    <body>
+        <h1>2º EXERCÍCIO</h1>
+        <p>Crie uma função que dado um intervalo (entre x e y) exiba todos número pares:</p>
+        <script>
+           function pares(x,y){
+                //Mostrar os números pares entre 02 números
+                while(x < y){ //condição de início da repetição, enquanto o número x for menor que o y
+                    if(x % 2 == 0){ //verificar se o número x tem resto 0 na divisão por 2
+
+                        console.log(x); //mostra o número x que atende à condição
+                    } x++; //incrementa em uma unidade o número x e volta ao laço while.
+
+                } //console.log("."); //mostra o ponto final ao terminar de exibir todos os números
+            } 
+
+            function impares(x,y){
+                while(x < y){
+                    if(x % 2 != 0){
+                        console.log(x);
+                    } x +=1;
+                }
+
+            }   
+
+            console.log("Número pares");
+            pares(2,10);
+            console.log("Número impares");
+            impares(2,10);
+        </script>
+    </body>
+</html>

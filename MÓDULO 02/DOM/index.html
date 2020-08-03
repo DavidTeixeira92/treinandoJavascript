@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso Javascript</title>
+    </head>
+    <body>
+        <h1>Trabalhando com a DOM</h1>
+
+        <div id = "app">
+            <input type="text" name="nome">
+            
+            <!-- 
+            <input type="text" name="nome2">
+            <input type="text" name="nome3">
+            -->
+            
+            <button class="botao">Adicionar</button>
+        </div>
+
+        <script>
+
+            //Vamos agora, referenciar elementos do HTML através do JS
+            //Criaremos uma variável que irá a armazenar uma referencia na DOM
+            //Podemos usar a variável global 'document' para referenciar elementos na DOM
+            //Por fim, essa busca do elemento será feito pelo ID.
+           /** 
+           var inputElement = document.getElementById('nome'); /retorna um único elemento
+            console.log(inputElement) 
+            **/
+
+            //Outra forma de fazer, usando a TAG agora
+           /**
+            var inputElement = document.getElementsByTagName('input')[0]; //retorna um vetor e forcei a posição zero
+            console.log(inputElement);
+            **/
+
+            //Mais outra forma de fazer, usando CLASS agora
+            /**
+            var inputElement = document.getElementsByClassName('nome')[0]; //retorna um vetor e forcei a posição zero
+            console.log(inputElement);
+            **/
+            
+            //última forma e a melhor, via QuerySelector
+            //Ele percorre toda a DOM até achar o elemento desejado
+            ///insere o caminho do elemento que deseja. 
+            //O retorno é um único elemento mesmo que existam diversos elementos input, por exemplo, sempre retorna o primeiro.
+            var inputElement = document.querySelector('div#app input'); //Obs: o body sempre tem, está implícito no caminho
+            console.log(inputElement);
+
+            //outra forma de usar o QuerySelector
+            var inputElement2 = document.querySelector('input[name=nome]'); //aqui referencia ao elemente input com base na propriedade que está especificada entre []
+            console.log(inputElement2);
+
+            //Aqui é o caso de existe vários elementos iguais como um input e quero retornar todos pelo QuerySelector
+
+            var inputElement3 = document.querySelectorAll('input');
+            console.log(inputElement3);
+
+
+            //incrementando mais funcionalidades
+            var inputElement4 = document.querySelector('input[name=nome]');
+
+            //vou disparar uma ação no button usando o JS e não usando uma propriedade dentro da tag button
+
+            var btnElement = document.querySelector('button.botao');
+            btnElement.onclick = function(){
+                var text = inputElement4.value; //esta linha permite que possamos recuperar as informações digitadas em input
+                //alert('Botão Pressionado');
+                alert(text);
+            }
+
+
+        </script>
+    </body>
+</html>

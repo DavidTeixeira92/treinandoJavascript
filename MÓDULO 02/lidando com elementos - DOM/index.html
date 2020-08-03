@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso Javascript</title>
+    </head>
+    <body>
+        <h1>Lidando com os elementos da DOM</h1>
+
+        <div id = "app">
+            <input id="nome"/>
+        </div>
+
+        <script>
+
+            var linkElement = document.createElement('a'); //criando uma tag <a> 
+
+            linkElement.setAttribute('href','https://www.youtube.com/c/TioDavidEducação'); //atribuindo a propriedade href tag <a>
+            linkElement.setAttribute('title','Canal do Tio David'); //atibuindo a propriedade title da tag <a>
+            linkElement.setAttribute('target','_blank'); //atribuindo a propriedade target da tag <a> para abrir o link em uma nova aba
+
+            var textElement = document.createTextNode('Acesse o Canal TD Educação'); //criando texto que vai receber o link criado
+            linkElement.appendChild(textElement); //Add o textElement como um 'filho' do linkElement
+
+            var containerElement = document.querySelector('#app');//localizando o div onde o link será adicionado
+            containerElement.appendChild(linkElement); //Jogando o link dentro do body, na div id=app
+
+            var inputElement = document.querySelector('#nome');
+            containerElement.removeChild(inputElement); //Usando a variável que se refere à div id="app" para poder remover o elemento input dentro dela.
+
+
+        </script>
+    </body>
+</html>

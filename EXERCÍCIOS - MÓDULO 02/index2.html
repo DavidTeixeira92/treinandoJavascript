@@ -1,0 +1,96 @@
+<html>
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title>Exercício - Módulo 02</title>
+
+    </head>
+
+    <body>
+
+        <h1>2º exercício</h1>
+
+        <p>
+            Utilizando o resultado do primeiro desafio, toda vez que o usuário passar o mouse por cima de
+algum quadrado troque sua cor para uma cor aleatória gerada pela função abaixo:
+        </p>
+
+        <div id = "app">
+
+            <button id = "botao">Criar quadrado vermelho</button>
+
+        </div>
+        <br>
+        <div id = "quadrado"> 
+                  
+        </div>
+        
+        <script>
+            //localizar a tag button pelo ID
+            var btnElement = document.getElementById('botao');
+            //localizar a tag div pelo ID
+            var quadradoElement = document.getElementById('quadrado');
+            //quando o botão é pressionado uma função é realizada
+            btnElement.onclick = function(){
+
+                var pularLinha = document.createElement('br'); //criei aqui a tag br
+                var quadrado = document.createElement('div'); //criei aqui a tag div
+
+                //Nas próximas 03 linhas, defini as propriedades do CSS de altura, largura e cor de fundo.
+                quadrado.style.width = 100; 
+                quadrado.style.height = 100;
+                quadrado.style.backgroundColor = 'red';
+                //quadrado.style.backgroundColor = getRandomColor(); //CRIANDO QUADRADO COM CORES ALEATÓRIAS
+
+                //Disse aqui que o quadrado é parte do quadradoElement,
+                //ou seja, uma div com a estilização CSS é adicionada dentro da div id="quadrado"
+                //quadradoElement.appendChild(quadrado); 
+
+                //Disse aqui que o pularLinha é parte do quadradoElement,
+                //basicamente serão realizadas quebras de linhas após cada quadrado adicionado
+                quadradoElement.appendChild(pularLinha); //caso não queira que pule linha, retire este trecho
+
+                //Função para mostrar uma mensagem a cada criação de um quadrado com o delay de 1s.
+                function mostrarMensagem(){
+                    alert('Seu quadrado vermelho foi criado!')
+                }
+                setTimeout(mostrarMensagem, 1000); //após 1s, a mensagem "Seu quadrado vermelho foi criado!" é apresentada na tela.
+                
+
+                quadrado.onmouseover = function(){ //Ao passar o mouse sobre o quadrado
+                    quadrado.style.backgroundColor = getRandomColor(); //aqui mexe na propriedade CSS do bkg-color usando como valor a função getRandomColor()
+                }
+                
+                //Disse aqui que o quadrado é parte do quadradoElement,
+                //ou seja, uma div com a estilização CSS é adicionada dentro da div id="quadrado"
+                //Add tbm a nova estilização gerada com a função getRandomColor()
+                quadradoElement.appendChild(quadrado); 
+
+                function getRandomColor() {
+
+                    var letters = "0123456789ABCDEF";
+                    var color = "#";
+
+                    for (var i = 0; i < 6; i++) {
+
+                    color += letters[Math.floor(Math.random() * 16)];
+
+                    }
+
+                    return color;
+                    
+                }
+                //Aqui especifico um valor de cor hexadecimal aleatório
+                var newColor = getRandomColor('#E943F0'); // #E943F0
+                console.log(newColor); //mostrando as cores aleatórias geradas
+
+           
+            } 
+            
+        </script>
+
+    </body>
+
+</html>

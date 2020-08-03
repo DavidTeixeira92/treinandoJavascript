@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso Javascript</title>
+    </head>
+    <body class = "container">
+        <h1>Alterando estilos</h1>
+
+        <div id = "app">
+            <div class="box"></div>
+        </div>
+
+        <script>
+            //controlando a estilização CSS dos elementos
+
+            var boxElement = document.querySelector('.box'); //variável que irá localizar a div class="box"
+
+            boxElement.style.width = 300;
+            boxElement.style.height = 100;
+            boxElement.style.backgroundColor = 'purple';
+            boxElement.style.margin = '0 auto';
+            boxElement.style.borderColor = 'yellow'; //No CSS é border-color mas no JS fica sem isso e a letra seguinte em CAPSLOCK.
+            boxElement.style.borderStyle = "groove";
+            boxElement.style.borderWidth = 5;
+
+
+            var containerElement = document.querySelector('.container');
+            containerElement.style.background = 'green';
+           
+
+
+        </script>
+    </body>
+</html>
